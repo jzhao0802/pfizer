@@ -1,0 +1,25 @@
+,qc_num,qc_desc,passed,level,level_int,extra,input_file,input_file_path,data_hash,exec_time,text
+0,qc9,"General function to compare chosen date columns with one other date column, it tests if columns_a are </<=/>=/> column_b, where the comparison operator is defined by the parameter comparison.",True,error,1,,input1,F:/Projects/Pfizer_mCRPC/Data/Raw_data/total.csv,8142050349278995204,8.2990s,"keys_columns_a = ['first_exp_date_cols', 'last_exp_date_cols']<br>comparison = >=<br>key_column_b = lookback_date_col<br>"
+1,qc9,"General function to compare chosen date columns with one other date column, it tests if columns_a are </<=/>=/> column_b, where the comparison operator is defined by the parameter comparison.",False,error,1,extra_1,input1,F:/Projects/Pfizer_mCRPC/Data/Raw_data/total.csv,8142050349278995204,8.2452s,"keys_columns_a = ['first_exp_date_cols', 'last_exp_date_cols']<br>comparison = <<br>key_column_b = index_date_col<br>"
+2,qc1,"Testing if all column names of dataframe have no special characters and no
+    spaces. They should only contain letters, numbers and underscores.",True,error,1,,input1,F:/Projects/Pfizer_mCRPC/Data/Raw_data/total.csv,8142050349278995204,0.0060s,
+3,qc3,"All columns ending in FLAG, COUNT or FREQ should be 0 or positive, and never missing. ",True,error,1,,input1,F:/Projects/Pfizer_mCRPC/Data/Raw_data/total.csv,8142050349278995204,1.5957s,
+4,qc4,No duplicate patient IDs within the same cohort file.,True,error,1,,input1,F:/Projects/Pfizer_mCRPC/Data/Raw_data/total.csv,8142050349278995204,0.0140s,
+5,qc6,No columns should be 100% missing.,True,error,1,,input1,F:/Projects/Pfizer_mCRPC/Data/Raw_data/total.csv,8142050349278995204,15.1635s,
+6,qc7,No rows should be 100% missing,True,error,1,,input1,F:/Projects/Pfizer_mCRPC/Data/Raw_data/total.csv,8142050349278995204,14.9632s,
+7,qc8,"All columns should end with one of the official suffixes in the config, or be equal to 
+the gender, target, patient_id or matched_patient_id cols",True,error,1,,input1,F:/Projects/Pfizer_mCRPC/Data/Raw_data/total.csv,8142050349278995204,0.0000s,
+8,qc11,"All first exposure dates are before their last exposure date, unless corresponding count=1 in 
+which case they are equal.",True,error,1,,input1,F:/Projects/Pfizer_mCRPC/Data/Raw_data/total.csv,8142050349278995204,0.0312s,multiple_a_day = True<br>
+9,qc12,"If you have a non missing value for one of the variable types (flag, counts, freq, dates) for patient 
+A then all corresponding var types should have non-missing entries for that patient. I.e. if there’s a missing first or last exposure date, then the count or frequency must be 0. ",True,error,1,,input1,F:/Projects/Pfizer_mCRPC/Data/Raw_data/total.csv,8142050349278995204,14.0404s,
+10,qc13," Checks that when first exposure date is before last exposure date, the count for that feature is bigger than 1.",True,error,1,,input1,F:/Projects/Pfizer_mCRPC/Data/Raw_data/total.csv,8142050349278995204,0.0240s,
+11,qc14,No missing patient IDs,True,error,1,,input1,F:/Projects/Pfizer_mCRPC/Data/Raw_data/total.csv,8142050349278995204,0.0010s,
+12,qc15,Test if all numeric columns are actually numeric (if the data comes from csv),True,error,1,,input1,F:/Projects/Pfizer_mCRPC/Data/Raw_data/total.csv,8142050349278995204,0.0180s,
+13,qc16,Percentage of missing or zero values should be within a fixed % across the two classes.,True,error,1,,input1,F:/Projects/Pfizer_mCRPC/Data/Raw_data/total.csv,8142050349278995204,15.6159s,max_fraction_diff = 0.5<br>
+14,qc16,Percentage of missing or zero values should be within a fixed % across the two classes.,False,error,1,extra_2,input1,F:/Projects/Pfizer_mCRPC/Data/Raw_data/total.csv,8142050349278995204,15.3166s,max_fraction_diff = 0.3<br>
+15,qc16,Percentage of missing or zero values should be within a fixed % across the two classes.,False,error,1,extra_3,input1,F:/Projects/Pfizer_mCRPC/Data/Raw_data/total.csv,8142050349278995204,15.1786s,max_fraction_diff = 0.1<br>
+16,qc16,Percentage of missing or zero values should be within a fixed % across the two classes.,False,error,1,extra_4,input1,F:/Projects/Pfizer_mCRPC/Data/Raw_data/total.csv,8142050349278995204,15.1971s,max_fraction_diff = 0.05<br>
+17,qc16,Percentage of missing or zero values should be within a fixed % across the two classes.,False,error,1,extra_5,input1,F:/Projects/Pfizer_mCRPC/Data/Raw_data/total.csv,8142050349278995204,15.0872s,max_fraction_diff = 0.02<br>
+18,qc18,Patient age should be between 0 and 85.,True,error,1,,input1,F:/Projects/Pfizer_mCRPC/Data/Raw_data/total.csv,8142050349278995204,0.0020s,
+19,qc19,Every row should have a valid INDEX_DATE which is after a given date. ,True,error,1,,input1,F:/Projects/Pfizer_mCRPC/Data/Raw_data/total.csv,8142050349278995204,0.0020s,date_limit = 01/01/2014<br>
