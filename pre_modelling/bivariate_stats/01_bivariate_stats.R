@@ -13,13 +13,13 @@ var_config <- var_config_generator(input_df = df,
 var_config_with_descr <- read.csv("F:/Frederik/pfizer_mcrpc/pfizer_mcrpc/pre_modelling/bivariate_stats/04_with_datediff_and_dummies_no_flags_var_config.csv")
 
 # Clean up some bad characters in the column names of the custom HCP columns
-var_config_with_descr$Column <- gsub(paste(c('&', '/', '-', ','), collapse = "|"), '', var_config$Column)
+# var_config_with_descr$Column <- gsub(paste(c('&', '/', '-', ','), collapse = "|"), '', var_config_with_descr$Column)
 
 # Assign key to patient_id row
-var_config_with_descr[1,'Type'] <- 'key'
+# var_config_with_descr[1,'Type'] <- 'key'
 
 # Run full output bivar_stats
 bivar_stats_y_flag(df, var_config = var_config_with_descr, 
                    prefix = '04_pfizer_total_with_dd_no_flags', outcome_var = 'pn_flag',
-                   concise_output = TRUE, date_diff_code = "_dd", 
+                   concise_output = TRUE, vargt0 = TRUE, date_diff_code = "_dd", 
                    output_dir = "F:/Frederik/pfizer_mcrpc/pfizer_mcrpc/pre_modelling/bivariate_stats")
