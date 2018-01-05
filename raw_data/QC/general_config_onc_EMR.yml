@@ -1,7 +1,7 @@
 general:
   source: csv
 
-  input1: F:/Projects/Pfizer_mCRPC/Data/Raw_data/Pfizer_mCRPC_ONCEMR.csv
+  input1: F:/Projects/Pfizer_mCRPC/Data/Raw_data/Oncology_EMR/Pfizer_mCRPC_ONCEMR_update.csv
   output_dir: F:/Frederik/pfizer_mcrpc/pfizer_mcrpc/raw_data/QC/report/oncology_emr
 
   date_cols: _DATE[0-9]{0,2}
