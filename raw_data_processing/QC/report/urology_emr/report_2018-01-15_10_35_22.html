@@ -1,0 +1,254 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>QC report</title>
+    <meta name="description" content="Data QC Report">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- S T Y L E S H E E T S -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+    html,
+        body {
+            margin: 10px;
+            width: 99%;
+            min-height: 100%;
+        }
+        .active {
+          color: #a5a5a5 !important;
+        }
+        td.highlight {
+            background-color: whitesmoke !important;
+        }
+    </style>
+
+    <!-- J A V A S C R I P T S -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/plug-ins/1.10.12/sorting/natural.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+
+</head>
+
+<body id="body">
+    <!-- D E A L I N G   W I T H   I D I O T S  -->
+    <noscript>
+        <style type="text/css">
+            .container {display:none;}
+        </style>
+        <div class="noscriptmsg col-md-8" style="text-align: justify;">
+        <h1>You don't have JavaScript enabled.</h1>
+          We understand, that you represent a very "special" 1% of all users, but<br>
+          please enable JavaScript to use  {{ config['APP_NAME'] }} (and 99.99% of the net).<br><br>
+          Cheers!
+        </div>
+    </noscript>
+
+    <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em>
+        <a href="http://browsehappy.com/">Upgrade to a different browser</a> or
+        <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>
+        to experience this site.</p><![endif]-->
+
+<link href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet">
+
+<!-- M A I N   S T U F F -->
+
+<div class="row">
+    <!--  TABLE  -->
+    <div id="table_wrapper" class="col-md-9">
+        <h3>Summary </h3>
+        <table id="table" class="table table-striped table-bordered"
+               cellspacing="0" style="width:100%; height:550px;"></table>
+    </div>
+    <!--  EXTRA  -->
+    <div id="extra_wrapper" class="col-md-3">
+        <h3>Extra info</h3>
+        <textarea id="extra_text" class="form-control" style="height:630px;"></textarea>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div id="overview" class="col-md-9">
+        <h3>Help</h3>
+        <p>
+            <ul>
+                <li><b>Order</b> each table column (or by multiple by pressing Shift) by clicking on the arrows next to the header.</li>
+                <li>If the table is visually too cluttered, <b>hide columns</b> with the 'Toggle column' menu.</li>
+                <li>Use the <b>search bar</b> to filter the table to errors, or whatever you want.</li>
+                <li>Reset all orderings and search by clicking the '<b>Reset table</b>'.</li>
+                <li>Access <b>extra information</b> by clicking on QCs with items in their 'extra' column. </li>
+            </ul>
+        </p>
+    </div>
+    <div id="help" class="col-md-3">
+        <h3>Overview</h3>
+        <p>
+            <ul>
+                <li>4 QC scripts were performed on</li>
+                <li>1 data file(s) in </li>
+                <li>0.01 mins (total) / 0.00 mins (qc time).</li>
+                <li>2 qc scripts passed,</li>
+                <li>2 failed.</li>
+            </ul>
+        </p>
+    </div>
+</div>
+<script type='text/javascript'>
+    var table_data = {
+    "data":
+        [{"qc_num":"qc9",
+        "qc_desc":"General function to compare chosen date columns with one other date column, it tests if columns_a are <\/<=\/>=\/> column_b, where the comparison operator is defined by the parameter comparison.",
+        "passed":true,"level":"error",
+        "level_int":1,"extra":"",
+        "input_file":"input1",
+        "input_file_path":"F:\\Projects\\Pfizer_mCRPC\\Data\\pre_modelling\\EMR_Urology\\Pfizer_mCRPC_UROEMR.csv",
+        "data_hash":8616231032610255396,"exec_time":"0.0156s",
+        "text":"keys_columns_a = ['date_cols']<br>comparison = >=<br>key_column_b = lookback_date_col<br>axis = 1<br>"},
+        {"qc_num":"qc9",
+        "qc_desc":"General function to compare chosen date columns with one other date column, it tests if columns_a are <\/<=\/>=\/> column_b, where the comparison operator is defined by the parameter comparison.",
+        "passed":true,"level":"error",
+        "level_int":1,"extra":"",
+        "input_file":"input1",
+        "input_file_path":"F:\\Projects\\Pfizer_mCRPC\\Data\\pre_modelling\\EMR_Urology\\Pfizer_mCRPC_UROEMR.csv",
+        "data_hash":8616231032610255396,"exec_time":"0.0156s",
+        "text":"keys_columns_a = ['date_cols']<br>comparison = >=<br>key_column_b = lookback_date_col<br>axis = 0<br>"},
+        {"qc_num":"qc9",
+        "qc_desc":"General function to compare chosen date columns with one other date column, it tests if columns_a are <\/<=\/>=\/> column_b, where the comparison operator is defined by the parameter comparison.",
+        "passed":false,"level":"error",
+        "level_int":1,"extra":"extra_1",
+        "input_file":"input1",
+        "input_file_path":"F:\\Projects\\Pfizer_mCRPC\\Data\\pre_modelling\\EMR_Urology\\Pfizer_mCRPC_UROEMR.csv",
+        "data_hash":8616231032610255396,"exec_time":"0.0000s",
+        "text":"keys_columns_a = ['date_cols']<br>comparison = <=<br>key_column_b = index_date_col<br>axis = 1<br>"},
+        {"qc_num":"qc9",
+        "qc_desc":"General function to compare chosen date columns with one other date column, it tests if columns_a are <\/<=\/>=\/> column_b, where the comparison operator is defined by the parameter comparison.",
+        "passed":false,"level":"error",
+        "level_int":1,"extra":"extra_2",
+        "input_file":"input1",
+        "input_file_path":"F:\\Projects\\Pfizer_mCRPC\\Data\\pre_modelling\\EMR_Urology\\Pfizer_mCRPC_UROEMR.csv",
+        "data_hash":8616231032610255396,"exec_time":"0.0156s",
+        "text":"keys_columns_a = ['date_cols']<br>comparison = <=<br>key_column_b = index_date_col<br>axis = 0<br>"}]
+    };    var extra_1 = "5\n10\n12\n13\n15\n16\n21\n24\n25\n26\n27\n30\n31\n35\n42\n49\n54\n58\n59\n61\n65\n68\n69\n72\n76\n80\n82\n84\n85\n89\n92\n94\n100\n102\n103\n104\n105\n107\n108\n112\n113\n118\n122\n123\n131\n132\n133\n137\n139\n140\n142\n145\n148\n149\n150\n151\n155\n156\n165\n167\n169\n173\n175\n179\n184\n191\n197\n200\n203\n206\n211\n212\n218\n219\n224\n228\n229\n237\n238\n241\n242\n243\n245\n246\n247\n249\n252\n254\n266\n267\n268\n269\n273\n274\n276\n278\n281\n282\n284\n286\n291\n298\n302\n306\n308\n312\n313\n315\n316\n319\n324\n327\n329\n330\n332\n335\n338\n339\n340\n343\n346\n351\n352\n353\n355\n361\n365\n366\n369\n372\n376\n380\n385\n386\n387\n388\n394\n395\n396\n399\n403\n406\n409\n411\n412\n413\n414\n415\n418\n436\n438\n441\n443\n444\n445\n446\n447\n449\n453\n456\n459\n460\n465\n466\n469\n470\n475\n476\n479\n481\n483\n484\n486\n488\n491\n493\n498\n499\n501\n504\n514\n515\n517\n518\n519\n521\n523\n525\n526\n533\n536\n539\n540\n545\n548\n557\n558\n562\n563\n565\n570\n572\n574\n576\n580\n582\n583\n587\n594\n598\n602\n604\n606\n608\n609\n614\n615\n617\n619\n620\n625\n628\n629\n634\n637\n639\n644\n651\n652\n654\n655\n658\n663\n665\n684\n688\n691\n693\n694\n699\n707\n708\n712\n715\n722\n726\n731\n735\n736\n743\n745\n747\n749\n762\n763\n773\n774\n780\n781\n783\n784\n785\n786\n793\n799\n804\n805\n806\n808\n810\n811\n815\n819\n820\n821\n822\n824\n827\n832\n837\n842\n849\n851\n854\n858\n865\n866\n868\n871\n873\n876\n877\n878\n883\n885\n899\n900\n901\n908\n916\n924\n926\n928\n931\n932\n935\n946\n947\n948\n954\n963\n964\n965\n966\n969\n971\n977\n981\n986\n988\n990\n992\n995\n998\n1003\n1004\n1007\n1013\n1022\n1026\n1027\n1030\n1034\n1038\n1040\n1044\n1051\n1064\n1065\n1068\n1072\n1074\n1077\n1078\n1083\n1085\n1086\n1093\n1099\n1101\n1103\n1106\n1108\n1110\n1111\n1112\n1116\n1119\n1125\n1127\n1132\n1133\n1137\n1139\n1142\n1144\n1146\n1147\n1150\n1152\n1154\n1158\n1159\n1160\n1164\n1165\n1168\n1169\n1173\n1174\n1180\n1184\n1189\n1190\n1193\n1198\n1201\n1202\n1204\n1206\n1209\n1212\n1217\n1219\n1225\n1231\n1236\n1237\n1241\n1245\n1248\n1251\n1252\n1253\n1254\n1255\n1260\n1273\n1274\n1275\n1281\n1283\n1288\n1289\n1296\n1309\n1310\n1312\n1313\n1328\n1329\n1333\n1342\n1343\n1346\n1348\n1354\n1359\n1363\n1364\n1366\n1369\n1372\n1373\n1375\n1378\n1379\n1385\n1387\n1392\n1393\n1394\n1398\n1405\n1408\n1410\n1412\n1413\n1418\n1422\n1428\n1431\n1434\n1435\n1437\n1438\n1444\n1445\n1446\n1447\n1450\n1454\n1459\n1462\n1464\n1478\n1480\n1483\n1491\n1493\n1495\n1508\n1510\n1512\n1519\n1524\n1529\n1533\n1538\n1541\n1546\n1548\n1550\n1552\n1554\n1557\n1560\n1561\n1564\n1565\n1566\n1567\n1574\n1576\n1579\n1581\n1583\n1587\n1588\n1589\n1591\n1592\n1595\n1605\n1606\n1608\n1609\n1610\n1611\n1612\n1613\n1615\n1617\n1620\n1621\n1625\n1628\n1634\n1636\n1640\n1642\n1644\n1647\n1657\n1660\n1661\n1662\n1669\n1670\n1672\n1677\n1680\n1684\n1687\n1690\n1693\n1695\n1700\n1702\n1705\n1708\n1709\n1711\n1714\n1715\n1718\n1725\n1728\n1729\n1730\n1734\n1736\n1740\n1747\n1753\n1754\n1756\n1768\n1769\n1771\n1775\n1781\n1782\n1786\n1791\n1792\n1795\n1805\n1806\n1808\n1814\n1817\n1818\n1824\n1825\n1826\n1832\n1838\n1839\n1841\n1848\n1853\n1854\n1857\n1858\n1859\n1861\n1865\n1867\n1869\n1870\n1876\n1879\n1882\n1884\n1890\n1892\n1893\n1896\n1899\n1900\n1903\n1909\n1915\n1917\n1922\n1926\n1932\n1938\n1941\n1944\n1949\n1959\n1963\n1965\n1974\n1975\n1980\n1981\n1983\n1985\n1988\n1991\n1996\n1997\n1999\n2006\n2011\n2013\n2014\n2016\n2020\n2028\n2030\n2039\n2041\n2043\n2044\n2048\n2052\n2062\n2064\n2066\n2070\n2077\n2079\n2081\n2089\n2101\n2109\n2111\n2113\n2116\n2120\n2122\n2126\n2127\n2129\n2130\n2134\n2137\n2142\n2144\n2146\n2156\n2158\n2159\n2160\n2170\n2173\n2180\n2182\n2186\n2189\n2190\n2192\n2193\n2195\n2196\n2198\n2201\n2202\n2207\n2212\n2218\n2220\n2224\n2232\n2235\n2237\n2238\n2240\n2241\n2242\n2243\n2244\n2248\n2249\n2250\n2261\n2263\n2264\n2265\n2266\n2270\n2272\n2279\n2282\n2283\n2284\n2287\n2288\n2291\n2292\n2297\n2303\n2304\n2320\n2328\n2329\n2330\n2332\n2333\n2335\n2337\n2345\n2346\n2348\n2349\n2352\n2355\n2356\n2362\n2370\n2373\n2378\n2388\n2391\n2392\n2397\n2398\n2400\n2402\n2413\n2414\n2415\n2416\n2421\n2424\n2425\n2426\n2430\n2431\n2435\n2436\n2437\n2440\n2441\n2443\n2446\n2449\n2455\n2456\n2458\n2461\n2462\n2470\n2474\n2476\n2479\n2480\n2481\n2482\n2486\n2488\n2492\n2496\n2497\n2501\n2502\n2503\n2509\n2510\n2511\n2512\n2520\n2521\n2524\n2526\n2537\n2538\n2540\n2542\n2543\n2554\n2555\n2566\n2567\n2568\n2569\n2574\n2575\n2578\n2581\n2585\n2586\n2588\n2589\n2592\n2593\n2597\n2598\n2600\n2603\n2604\n2608\n2609\n2615\n2616\n2620\n2621\n2622\n2624\n2633\n2635\n2637\n2640\n2646\n2647\n2649\n2651\n2652\n2653\n2654\n2656\n2658\n2660\n2663\n2670\n2671\n2672\n2673\n2681\n2683\n2693\n2708\n2712\n2722\n2724\n2725\n2727\n2728\n2738\n2746\n2748\n2753\n2754\n2756\n2762\n2765\n2771\n2772\n2780\n2783\n2784\n2788\n2789\n2790\n2799\n2806\n2807\n2809\n2820\n2824\n2827\n2833\n2836\n2837\n2839\n2842\n2845\n2855\n2859\n2860\n2863\n2865\n2873\n2875\n2881\n2882\n2891\n2895\n2896\n2903\n2915\n2920\n2927\n2934\n2935\n2939\n2942\n2943\n2949\n2950\n2951\n2955\n2959\n2962\n2966\n2967\n2977\n2980\n2981\n2983\n2990\n2991\n2992\n2993\n2997\n3000\n3005\n3009\n3010\n3012\n3014\n3017\n3020\n3021\n3022\n3023\n3024\n3029\n3030\n3033\n3035\n3037\n3038\n3039\n3040\n3044\n3047\n3053\n3056\n3060\n3062\n3069\n3072\n3075\n3077\n3079\n3087\n3088\n3095\n3096\n3100\n3103\n3105\n3106\n3107\n3108\n3113\n3116\n3120\n3125\n3126\n3129\n3130\n3131\n3134\n3140\n3142\n3143\n3146\n3147\n3151\n3158\n3160\n3166\n3168\n3171\n3174\n3175\n3178\n3180\n3182\n3183\n3189\n3195\n3197\n3199\n3200\n3201\n3212\n3214\n3216\n3217\n3221\n3226\n3232\n3236\n3240\n3241\n3242\n3245\n3247\n3248\n3255\n3260\n3265\n3270\n3275\n3278\n3289\n3290\n3293\n3297\n3298\n3301\n3304\n3306\n3307\n3310\n3311\n3313\n3327\n3329\n3340\n3341\n3342\n3348\n3354\n3355\n3360\n3364\n3366\n3368\n3372\n3377\n3378\n3381\n3390\n3392\n3393\n3394\n3398\n3401\n3407\n3414\n3419\n3421\n3425\n3427\n3431\n3432\n3433\n3435\n3438\n3446\n3449\n3454\n3455\n3457\n3458\n3460\n3464\n3465\n3466\n3468\n3471\n3472\n3480\n3483\n3484\n3486\n3487\n3488\n3493\n3496\n3503\n3505\n3506\n3509\n3512\n3514\n3521\n3522\n3524\n3527\n3528\n3535\n3537\n3540\n3549\n3552\n3554\n3556\n3557\n3558\n3562\n3568\n3570\n3571\n3572\n3577\n3578\n3579\n3581\n3584\n3590\n3594\n3595\n3600\n3601\n3602\n3604\n3605\n3606\n3608\n3610\n3613\n3618\n3619\n3625\n3626\n3627\n3630\n3634\n3635\n3640\n3641";
+    var extra_2 = "MET_DATE2\nMET_DATE3\nMET_DATE4\nMET_DATE5\nMET_DATE6\nMET_DATE7";
+
+    // populate table dynamically with cols we got from user
+    var table_cols = ['qc_num', 'qc_desc', 'passed', 'level', 'level_int', 'extra','input_file', 'input_file_path', 'data_hash', 'exec_time', 'text'];
+    var colsBase = [];
+    var cols = colsBase.slice();
+    for (var i = 0; i < table_cols.length; i++) {
+        cols.push({title: table_cols[i], "data": table_cols[i], "type": "natural"})
+    }
+    var table = $('#table').DataTable({
+        data: table_data.data,
+        columns: cols,
+        // order by chromosome number, feature start and end
+        "order": [[3, "asc"], [4, "asc"], [7, "asc"], [8, "asc"]],
+        scrollY: 550,
+        scrollCollapse: true,
+        paging: false,
+        info: false,
+        'autoWidth': true
+    });
+
+    // ----------------------------------------------------------------------------
+    // MOUSE OVER AND OUT
+    // ----------------------------------------------------------------------------
+    $('#table tbody').on('mouseover', 'td', tableMouseOverCell);
+    $('#table tbody').on('mouseout', 'td', tableMouseOutCell);
+    $('#table tbody').on('click', 'td', tableClickedCell);
+
+    function tableMouseOverCell(event) {
+        var colIdx = table.cell(this).index().column;
+        $( table.column( colIdx ).nodes() ).addClass( 'info' );
+        var tr = $(this).closest('tr');
+        tr.addClass('info');
+    }
+
+    function tableMouseOutCell(event) {
+        var colIdx = table.cell(this).index().column;
+        $( table.column( colIdx ).nodes() ).removeClass( 'info' );
+        var tr = $(this).closest('tr');
+        tr.removeClass('info');
+    }
+
+    // pull out extra variables and display then
+    function tableClickedCell(event){
+        var tr = $(this).closest('tr');
+        var extra_cell = table.row($(tr)).data().extra;
+        if (extra_cell  !== ''){
+            $('#extra_text').val(window[extra_cell]);
+        } else{
+            $('#extra_text').val('');
+        }
+    }
+
+    // ----------------------------------------------------------------------------
+    // ADD DYNAMIC COLUMN TOGGLE AND RESET BUTTON TO SEARCH BAR
+    // ----------------------------------------------------------------------------
+    // readjust col widths of search bar
+
+    function addToggleBar(tableName) {
+        $('#' + tableName + '_wrapper .col-sm-6:nth-child(1)')
+            .removeClass('col-sm-6')
+            .addClass('col-sm-9')
+            .addClass('togglebar');
+        $('#' + tableName + '_wrapper .col-sm-6:nth-child(2)')
+            .removeClass('col-sm-6')
+            .addClass('col-sm-3');
+
+        // add reset button and build toogle menu from table_cols array
+        var toggleMenu = '<p><a href="#" id="reset">Reset table</a> | Toggle column: ';
+        for (var i = 0; i < table_cols.length; i++) {
+            var d;
+            if (table_cols[i] !== '# links') {
+                d = table_cols[i];
+            } else {
+                d = "# links";
+            }
+            toggleMenu += '<a class="toggle-vis" data-column="' + (i) + '">' + d + '</a>'
+            if (i < table_cols.length - 1) {
+                toggleMenu += '&nbsp;<span style="color: #aaaaaa">|</span>&nbsp;';
+            } else {
+                toggleMenu += '</p>';
+            }
+        }
+
+        // add menu next to search bar and force hand cursor
+        $(toggleMenu).appendTo('#' + tableName +'_wrapper .col-sm-9').css("cursor", "pointer");
+
+
+        // register click events for toggle menu items
+        $('a.toggle-vis').on('click', function (e) {
+            if($(this).hasClass("active")) {
+                $(this).removeClass("active");
+            } else {
+                $(this).addClass("active");
+            }
+            e.preventDefault();
+            var column = table.column($(this).attr('data-column'));
+            column.visible(!column.visible());
+        });
+    }
+
+    // add toggle bar and reset button for both tables
+    addToggleBar('table');
+    $('#reset').click(resetTables);
+
+    function resetTables(){
+        // reset tables
+        table.search('').columns().search('').draw();
+        table.order([[3, "asc"], [4, "asc"], [7, "asc"], [8, "asc"]]).draw()
+        $('#extra_text').val('');
+    }
+</script>
+</body>
+</html>
+

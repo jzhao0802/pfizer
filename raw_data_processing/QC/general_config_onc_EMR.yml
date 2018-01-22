@@ -1,0 +1,64 @@
+general:
+  source: csv
+
+  input1: F:/Projects/Pfizer_mCRPC/Data/pre_modelling/EMR_Oncology/Pfizer_mCRPC_ONCEMR_update.csv
+  output_dir: F:\Frederik\pfizer_mcrpc\pfizer_mcrpc\raw_data_processing\QC\report\oncology_emr
+
+  date_cols: _DATE[0-9]{0,2}
+  count_cols: _CNT
+  flag_cols: _FLAG
+  freq_cols: _FREQ
+  first_exp_date_cols: _MIN_DT
+  last_exp_date_cols: _MAX_DT
+  index_date_col: INDEX_DATE
+  lookback_date_col: LOOKBACK_DATE
+  gender_col: GENDER
+  age_col: AGE_INDEX
+  target_col: PN_FLAG
+  patient_id_col: patient_id
+  matched_patient_id_col: MATCHED_PATIENT_ID
+  special_cols:
+    - AGE_PC
+  date_format: "%Y-%m-%d"
+
+qcs:
+# Relative date qcs made out of qc9
+  - qc_num: qc9
+    input_file: input1
+    level: error
+    qc_params:
+      keys_columns_a:
+        - date_cols
+      comparison: '>='
+      key_column_b: lookback_date_col
+      axis: 1
+
+  - qc_num: qc9
+    input_file: input1
+    level: error
+    qc_params:
+      keys_columns_a:
+        - date_cols
+      comparison: '>='
+      key_column_b: lookback_date_col
+      axis: 0
+
+  - qc_num: qc9
+    input_file: input1
+    level: error
+    qc_params:
+      keys_columns_a:
+        - date_cols
+      comparison: '<='
+      key_column_b: index_date_col
+      axis: 1
+
+  - qc_num: qc9
+    input_file: input1
+    level: error
+    qc_params:
+      keys_columns_a:
+        - date_cols
+      comparison: '<='
+      key_column_b: index_date_col
+      axis: 0
